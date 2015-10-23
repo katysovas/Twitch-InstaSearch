@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
     timer && clearTimeout(timer);
     if (twitchSettings.query.length > 3){
       timer = setTimeout(function(){
-      searchAPI(twitchSettings.url);
+      twitchSettings.page = 1;
+      searchAPI(twitchSettings.url);      
       }, 500);
     }
   });
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
       toggleVisibility(navigationNode, 0);
       toggleVisibility(prevPage, 0);
       toggleVisibility(nextPage, 0);
+      twitchSettings.page = 1;
     }
   });
 
