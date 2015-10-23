@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitch InstaSearch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta charset="utf-8">
+  <meta description="Instant Twitch stream search">
+  <link rel="stylesheet" href="dist/styles.css">
+</head>
+<body>
+  <div id="top-wrapper">
+
+    <div class="header">
+      <a href="/"><img class="logo" src="img/logo.png" alt="Twitch"></a>
+      <form class="search-form" onkeypress="return event.keyCode != 13;">
+        <input id="search-input" type="search" placeholder="Start typing..." />
+      </form>
+    </div>
+
+    <div class="progress-wrap progress">
+      <div class="progress-bar progress"></div>
+    </div>
+
+    <div class="results">
+      <div class="results-info">
+        <p>Total results: <span id="total-results">0</span></p>
+        <div id="navigation">
+          <div id="prevPage" class="arrow arrow-left"></div>
+          <p class="page-position"><span></span>/<span></span></p>
+          <div id="nextPage" class="arrow arrow-right"></div>
+        </div>
+
+        <div class="display">Display:
+          <a class="active filter" href="#">10</a>
+          <a class="filter" href="#">25</a>
+          <a class="filter" href="#">50</a>
+        </div>
+      </div>
+      <div id="results-list">
+      </div>
+    </div>
+  </div>
+
+  <div id="openModal" class="modalDialog">
+    <div> <a href="#" title="Close" id="modal-close" class="close">X</a>
+          <h2 id="modal-title"></h2>
+          <div class="wrapper">
+             <div class="user-block">
+              <img id="modal-user-img" src=""/><a id="modal-username" href="#"></a>
+             </div>
+         </div> 
+          <img id="modal-img" src=""/>
+    </div>
+  </div>
+
+<script data-main="scripts/main" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.min.js"></script>
+<script src="dist/all.min.js"></script>
+
+</body>
+</html>
